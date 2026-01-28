@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // Adicione esta linha
+  output: 'export', // Isso permite que o GitHub Pages leia seu site
   typescript: {
     ignoreBuildErrors: true,
   },

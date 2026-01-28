@@ -1,54 +1,60 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { CheckCircle, Star, MessageCircle } from "lucide-react"
+import { CheckCircle, Star, MessageCircle, Clock } from "lucide-react"
 
-const LINK_WHATSAPP = "[LINK_WHATSAPP]"
+const LINK_WHATSAPP_MENSAL = "https://wa.me/5511971890566?text=Ol%C3%A1!%20Quero%20assinar%20o%20plano%20Mensal%20do%20GuinCheck."
+const LINK_WHATSAPP_ANUAL = "https://wa.me/5511971890566?text=Ol%C3%A1!%20Quero%20assinar%20o%20plano%20Anual%20do%20GuinCheck."
+const LINK_WHATSAPP_EMPRESA = "https://wa.me/5511971890566?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20plano%20para%20Empresas%20do%20GuinCheck."
 
 const plans = [
   {
     name: "Mensal",
     price: "[VALOR]",
-    period: "/mês",
-    description: "Ideal para começar",
+    period: "/mes",
+    description: "Para comecar",
     features: [
-      "Checklists ilimitados",
-      "Geração de PDF",
-      "Assinatura digital",
-      "Histórico de remoções",
+      "Fotos ilimitadas",
+      "Funciona offline",
+      "Geracao de PDF",
+      "Assinatura na tela",
+      "Historico de remocoes",
       "Suporte por WhatsApp",
     ],
-    cta: "Assinar agora",
+    cta: "Falar no WhatsApp e Assinar",
+    link: LINK_WHATSAPP_MENSAL,
     highlighted: false,
+    comingSoon: false,
   },
   {
     name: "Anual",
     price: "[VALOR]",
     period: "/ano",
-    description: "Melhor custo-benefício",
+    description: "Recomendado",
     features: [
       "Tudo do plano Mensal",
-      "Economia de até 20%",
+      "Economize ate 20%",
       "Prioridade no suporte",
-      "Atualizações antecipadas",
-      "Backup na nuvem",
     ],
-    cta: "Assinar agora",
+    cta: "Falar no WhatsApp e Assinar",
+    link: LINK_WHATSAPP_ANUAL,
     highlighted: true,
+    comingSoon: false,
   },
   {
     name: "Equipe/Empresa",
     price: "Sob consulta",
     period: "",
-    description: "Para frotas e centrais",
+    description: "Para frotas",
     features: [
-      "Múltiplos usuários",
+      "Multiplos usuarios",
       "Painel administrativo",
-      "Relatórios consolidados",
-      "Integração com sistemas",
+      "Relatorios consolidados",
       "Suporte dedicado",
     ],
     cta: "Falar com atendimento",
+    link: LINK_WHATSAPP_EMPRESA,
     highlighted: false,
+    comingSoon: true,
   },
 ]
 
@@ -61,7 +67,7 @@ export function Pricing() {
             Planos que cabem no seu bolso
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Escolha o plano ideal para você ou sua empresa
+            Escolha o plano ideal para voce
           </p>
         </div>
 
@@ -72,7 +78,9 @@ export function Pricing() {
               className={`relative p-6 rounded-xl border transition-all duration-300 ${
                 plan.highlighted
                   ? "bg-primary text-primary-foreground border-primary scale-105 shadow-xl"
-                  : "bg-card text-card-foreground border-border hover:border-accent hover:shadow-lg"
+                  : plan.comingSoon
+                    ? "bg-card text-card-foreground border-border opacity-80"
+                    : "bg-card text-card-foreground border-border hover:border-accent hover:shadow-lg"
               }`}
             >
               {plan.highlighted && (
@@ -82,12 +90,20 @@ export function Pricing() {
                 </div>
               )}
 
+              {plan.comingSoon && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-muted text-muted-foreground px-3 py-1 rounded-full text-xs font-semibold">
+                  <Clock className="h-3 w-3" />
+                  Em breve
+                </div>
+              )}
+
               <div className="text-center">
                 <h3 className="text-lg font-semibold">{plan.name}</h3>
                 <p className={`text-sm mt-1 ${plan.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
                   {plan.description}
                 </p>
                 <div className="mt-4">
+                  <span className="text-sm">a partir de </span>
                   <span className="text-3xl font-bold">R$ {plan.price}</span>
                   <span className={`text-sm ${plan.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
                     {plan.period}
@@ -106,14 +122,16 @@ export function Pricing() {
 
               <Button
                 asChild
-                className={`w-full mt-6 font-semibold ${
+                className={`w-full mt-6 font-semibold h-12 ${
                   plan.highlighted
-                    ? "bg-accent text-accent-foreground hover:bg-accent/90"
-                    : "bg-primary text-primary-foreground hover:bg-primary/90"
+                    ? "bg-[#25D366] text-white hover:bg-[#20BD5A]"
+                    : plan.comingSoon
+                      ? "bg-muted text-muted-foreground hover:bg-muted/80"
+                      : "bg-[#25D366] text-white hover:bg-[#20BD5A]"
                 }`}
               >
-                <Link href={LINK_WHATSAPP} target="_blank" rel="noopener noreferrer">
-                  {plan.name === "Equipe/Empresa" && <MessageCircle className="mr-2 h-4 w-4" />}
+                <Link href={plan.link} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="mr-2 h-4 w-4" />
                   {plan.cta}
                 </Link>
               </Button>

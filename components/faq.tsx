@@ -9,28 +9,28 @@ import {
 
 const faqs = [
   {
-    question: "O PDF sai na hora?",
-    answer: "Sim! Assim que você finaliza o checklist com as assinaturas, o PDF é gerado automaticamente e fica pronto para compartilhar por WhatsApp ou e-mail.",
-  },
-  {
     question: "Funciona sem internet?",
-    answer: "Você pode preencher o checklist e tirar fotos offline. Quando conectar à internet, os dados são sincronizados automaticamente.",
+    answer: "Sim. Voce consegue preencher, registrar fotos e ocorrencias offline. Para enviar e sincronizar na nuvem, precisa de internet.",
   },
   {
-    question: "Dá para anexar muitas fotos?",
-    answer: "Sim, você pode adicionar quantas fotos precisar para documentar o estado do veículo antes e depois da remoção.",
+    question: "Tem limite de fotos?",
+    answer: "Nao. Voce pode anexar quantas fotos precisar em cada remocao.",
+  },
+  {
+    question: "O PDF sai na hora?",
+    answer: "Sim. Ao finalizar, voce gera o PDF e pode enviar para o cliente.",
   },
   {
     question: "Quem assina no celular?",
-    answer: "O cliente e o motorista podem assinar diretamente na tela do celular. As assinaturas ficam registradas no PDF final.",
+    answer: "Cliente e motorista assinam na tela, no proprio celular.",
   },
   {
-    question: "Onde fica o histórico?",
-    answer: "Todas as remoções ficam salvas no app, organizadas por data. Você pode acessar qualquer documento antigo quando precisar.",
+    question: "Onde fica o historico?",
+    answer: "No app, na area de historico. Voce consulta quando quiser.",
   },
   {
     question: "Como envio para o cliente?",
-    answer: "Após gerar o PDF, basta tocar em compartilhar e escolher WhatsApp, e-mail ou qualquer outro app. Simples assim!",
+    answer: "Voce compartilha por WhatsApp ou e-mail em poucos toques (quando estiver com internet).",
   },
 ]
 
@@ -43,7 +43,7 @@ export function FAQ() {
             Perguntas frequentes
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Tire suas dúvidas sobre o GuinCheck
+            Tire suas duvidas sobre o GuinCheck
           </p>
         </div>
 

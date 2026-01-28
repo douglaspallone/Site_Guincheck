@@ -1,35 +1,35 @@
-import { ClipboardList, Camera, PenTool, FileText, History, Share2 } from "lucide-react"
+import { ClipboardList, Camera, AlertTriangle, PenTool, FileText, History } from "lucide-react"
 
 const features = [
   {
     icon: ClipboardList,
     title: "Checklist Guiado",
-    description: "Siga as etapas sem esquecer nenhum detalhe importante.",
+    description: "Passo a passo. Sem esquecer nada.",
   },
   {
     icon: Camera,
-    title: "Fotos do Veículo",
-    description: "Registre o estado do veículo com fotos datadas.",
+    title: "Fotos do Veiculo",
+    description: "Quantas fotos precisar. Com registro.",
+  },
+  {
+    icon: AlertTriangle,
+    title: "Ocorrencias",
+    description: "Anote avarias e observacoes.",
   },
   {
     icon: PenTool,
-    title: "Assinatura Digital",
-    description: "Cliente e motorista assinam direto na tela.",
+    title: "Assinatura na Tela",
+    description: "Cliente e motorista assinam no celular.",
   },
   {
     icon: FileText,
-    title: "PDF Automático",
-    description: "Documento profissional gerado na hora.",
+    title: "PDF Automatico",
+    description: "Gera o documento na hora.",
   },
   {
     icon: History,
-    title: "Histórico Completo",
-    description: "Todas as remoções salvas e organizadas.",
-  },
-  {
-    icon: Share2,
-    title: "Compartilhamento Rápido",
-    description: "Envie por WhatsApp ou e-mail em segundos.",
+    title: "Historico Completo",
+    description: "Tudo salvo e organizado.",
   },
 ]
 
@@ -39,7 +39,7 @@ export function Features() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground">
-            Tudo que você precisa em um só app
+            Tudo em um so app
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Funcionalidades pensadas para o dia a dia do guincheiro
@@ -63,6 +63,28 @@ export function Features() {
               </p>
             </div>
           ))}
+        </div>
+      </div>
+
+      <div className="mt-16 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center p-8 bg-muted rounded-2xl">
+          <h3 className="text-xl sm:text-2xl font-bold text-foreground">
+            Chega de papel e discussao por avaria.
+          </h3>
+          <div className="mt-8 grid sm:grid-cols-3 gap-6">
+            <div className="flex flex-col items-center gap-2">
+              <Camera className="h-8 w-8 text-accent" />
+              <p className="font-semibold text-foreground">Fotos com data e hora</p>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <PenTool className="h-8 w-8 text-accent" />
+              <p className="font-semibold text-foreground">Assinatura na tela</p>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <FileText className="h-8 w-8 text-accent" />
+              <p className="font-semibold text-foreground">PDF pronto para enviar</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

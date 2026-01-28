@@ -1,8 +1,8 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { MessageCircle, Play, Download, CheckCircle, Camera, PenTool, FileText } from "lucide-react"
+import { MessageCircle, Eye, CheckCircle, Camera, PenTool, FileText, WifiOff } from "lucide-react"
 
-const LINK_WHATSAPP = "[LINK_WHATSAPP]"
+const LINK_WHATSAPP = "https://wa.me/5511971890566?text=Ol%C3%A1!%20Quero%20conhecer%20o%20GuinCheck%20e%20come%C3%A7ar%20a%20usar%20no%20meu%20guincho."
 const LINK_PLAY_STORE = "[LINK_PLAY_STORE]"
 const LINK_APP_STORE = "[LINK_APP_STORE]"
 
@@ -15,43 +15,43 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="text-center lg:text-left">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary-foreground leading-tight text-balance">
-              Checklist de Remoção em Minutos.{" "}
-              <span className="text-accent">Com Fotos, Assinatura e PDF.</span>
+              Checklist de Remocao em Minutos.{" "}
+              <span className="text-accent">Fotos Ilimitadas, Offline e PDF.</span>
             </h1>
             
-            <p className="mt-6 text-lg sm:text-xl text-primary-foreground/80 max-w-xl mx-auto lg:mx-0 text-pretty">
-              Padronize a remoção, reduza retrabalho e gere um PDF profissional para enviar na hora.
+            <p className="mt-6 text-lg sm:text-xl text-primary-foreground/90 max-w-xl mx-auto lg:mx-0 text-pretty">
+              Registre o estado do veiculo, anote ocorrencias, colha assinatura na tela e gere um PDF profissional para enviar na hora.
+            </p>
+
+            <p className="mt-4 text-sm text-primary-foreground/60 max-w-xl mx-auto lg:mx-0 flex items-center justify-center lg:justify-start gap-2">
+              <WifiOff className="h-4 w-4" />
+              Funciona sem internet durante a remocao. Para enviar e salvar na nuvem, precisa de conexao.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-base h-12 px-6">
+              <Button asChild size="lg" className="bg-[#25D366] text-white hover:bg-[#20BD5A] font-semibold text-base h-14 px-8">
                 <Link href={LINK_WHATSAPP} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="mr-2 h-5 w-5" />
                   Falar no WhatsApp
                 </Link>
               </Button>
               
-              <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-semibold text-base h-12 px-6">
-                <Link href="#como-funciona">
-                  <Play className="mr-2 h-5 w-5" />
-                  Ver como funciona
+              <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-semibold text-base h-14 px-8">
+                <Link href="#ver-por-dentro">
+                  <Eye className="mr-2 h-5 w-5" />
+                  Ver por dentro
                 </Link>
               </Button>
             </div>
 
-            <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-              <Button asChild variant="ghost" size="sm" className="text-primary-foreground/70 hover:text-primary-foreground hover:bg-primary-foreground/10">
-                <Link href={LINK_PLAY_STORE} target="_blank" rel="noopener noreferrer">
-                  <Download className="mr-2 h-4 w-4" />
-                  Google Play
-                </Link>
-              </Button>
-              <Button asChild variant="ghost" size="sm" className="text-primary-foreground/70 hover:text-primary-foreground hover:bg-primary-foreground/10">
-                <Link href={LINK_APP_STORE} target="_blank" rel="noopener noreferrer">
-                  <Download className="mr-2 h-4 w-4" />
-                  App Store
-                </Link>
-              </Button>
+            <div className="mt-6 flex flex-wrap gap-4 justify-center lg:justify-start text-sm text-primary-foreground/70">
+              <Link href={LINK_PLAY_STORE} target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors underline underline-offset-2">
+                Google Play
+              </Link>
+              <span className="text-primary-foreground/40">|</span>
+              <Link href={LINK_APP_STORE} target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors underline underline-offset-2">
+                App Store
+              </Link>
             </div>
           </div>
 
@@ -62,13 +62,13 @@ export function Hero() {
                 
                 <div className="absolute inset-4 top-12 bg-background rounded-2xl overflow-hidden">
                   <div className="bg-primary p-4">
-                    <p className="text-primary-foreground text-sm font-semibold">Nova Remoção</p>
+                    <p className="text-primary-foreground text-sm font-semibold">Nova Remocao</p>
                   </div>
                   
                   <div className="p-4 space-y-3">
                     <div className="flex items-center gap-3 p-3 bg-muted rounded-lg">
                       <CheckCircle className="h-5 w-5 text-green-600" />
-                      <span className="text-sm font-medium text-foreground">Dados do veículo</span>
+                      <span className="text-sm font-medium text-foreground">Dados do veiculo</span>
                     </div>
                     <div className="flex items-center gap-3 p-3 bg-muted rounded-lg">
                       <CheckCircle className="h-5 w-5 text-green-600" />
@@ -76,11 +76,11 @@ export function Hero() {
                     </div>
                     <div className="flex items-center gap-3 p-3 bg-accent/20 rounded-lg border-2 border-accent">
                       <Camera className="h-5 w-5 text-accent-foreground" />
-                      <span className="text-sm font-medium text-foreground">Capturar ocorrências</span>
+                      <span className="text-sm font-medium text-foreground">Ocorrencias</span>
                     </div>
                     <div className="flex items-center gap-3 p-3 bg-muted rounded-lg opacity-60">
                       <PenTool className="h-5 w-5 text-muted-foreground" />
-                      <span className="text-sm font-medium text-muted-foreground">Assinatura</span>
+                      <span className="text-sm font-medium text-muted-foreground">Assinatura na tela</span>
                     </div>
                     <div className="flex items-center gap-3 p-3 bg-muted rounded-lg opacity-60">
                       <FileText className="h-5 w-5 text-muted-foreground" />

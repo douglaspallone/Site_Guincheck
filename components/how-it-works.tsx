@@ -1,41 +1,40 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ClipboardList, Camera, FileCheck, MessageCircle } from "lucide-react"
+import { ClipboardList, Camera, FileCheck, MessageCircle, Eye } from "lucide-react"
 
-const LINK_WHATSAPP = "[LINK_WHATSAPP]"
-const LINK_DEMO = "[LINK_DEMO]"
+const LINK_WHATSAPP = "https://wa.me/5511971890566?text=Ol%C3%A1!%20Quero%20conhecer%20o%20GuinCheck%20e%20come%C3%A7ar%20a%20usar%20no%20meu%20guincho."
 
 const steps = [
   {
     number: "1",
     icon: ClipboardList,
-    title: "Preencha os dados da remoção",
-    description: "Informe placa, modelo e local de forma rápida e guiada.",
+    title: "Preencha os dados",
+    description: "Placa, modelo e local. Rapido e guiado.",
   },
   {
     number: "2",
     icon: Camera,
-    title: "Registre fotos e ocorrências",
-    description: "Tire fotos do veículo e anote qualquer avaria ou observação.",
+    title: "Tire fotos e registre",
+    description: "Sem limite de fotos. Mesmo sem internet.",
   },
   {
     number: "3",
     icon: FileCheck,
-    title: "Assine e gere o PDF para enviar",
-    description: "Colha assinaturas e compartilhe o documento na hora.",
+    title: "Assine e gere o PDF",
+    description: "Assinatura na tela e PDF pronto para enviar.",
   },
 ]
 
 export function HowItWorks() {
   return (
-    <section id="como-funciona" className="py-16 sm:py-20 lg:py-24 bg-muted scroll-mt-20">
+    <section id="como-funciona" className="py-16 sm:py-20 lg:py-24 bg-background scroll-mt-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground">
             Como funciona
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Três passos simples para uma remoção profissional
+            Tres passos simples. Sem complicacao.
           </p>
         </div>
 
@@ -68,15 +67,16 @@ export function HowItWorks() {
         </div>
 
         <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-          <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold h-12 px-6">
-            <Link href={LINK_DEMO} target="_blank" rel="noopener noreferrer">
-              Quero ver na prática
-            </Link>
-          </Button>
-          <Button asChild size="lg" variant="outline" className="font-semibold h-12 px-6 bg-transparent">
+          <Button asChild size="lg" className="bg-[#25D366] text-white hover:bg-[#20BD5A] font-semibold h-14 px-8">
             <Link href={LINK_WHATSAPP} target="_blank" rel="noopener noreferrer">
               <MessageCircle className="mr-2 h-5 w-5" />
               Falar no WhatsApp
+            </Link>
+          </Button>
+          <Button asChild size="lg" variant="outline" className="font-semibold h-14 px-8 bg-transparent">
+            <Link href="#ver-por-dentro">
+              <Eye className="mr-2 h-5 w-5" />
+              Ver por dentro
             </Link>
           </Button>
         </div>

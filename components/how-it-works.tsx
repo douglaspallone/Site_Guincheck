@@ -9,7 +9,7 @@ const steps = [
     number: "1",
     icon: ClipboardList,
     title: "Preencha os dados",
-    description: "Placa, modelo e local. Rapido e guiado.",
+    description: "Placa, modelo e local. Rápido e guiado.",
   },
   {
     number: "2",
@@ -34,7 +34,7 @@ export function HowItWorks() {
             Como funciona
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Tres passos simples. Sem complicacao.
+            Três passos simples. Sem complicação.
           </p>
         </div>
 

@@ -10,27 +10,27 @@ import {
 const faqs = [
   {
     question: "Funciona sem internet?",
-    answer: "Sim. Voce consegue preencher, registrar fotos e ocorrencias offline. Para enviar e sincronizar na nuvem, precisa de internet.",
+    answer: "Sim. Você consegue preencher, registrar fotos e ocorrências offline. Para enviar e sincronizar na nuvem, precisa de internet.",
   },
   {
     question: "Tem limite de fotos?",
-    answer: "Nao. Voce pode anexar quantas fotos precisar em cada remocao.",
+    answer: "Não. Você pode anexar quantas fotos precisar em cada remoção.",
   },
   {
     question: "O PDF sai na hora?",
-    answer: "Sim. Ao finalizar, voce gera o PDF e pode enviar para o cliente.",
+    answer: "Sim. Ao finalizar, você gera o PDF e pode enviar para o cliente.",
   },
   {
     question: "Quem assina no celular?",
-    answer: "Cliente e motorista assinam na tela, no proprio celular.",
+    answer: "Cliente e motorista assinam na tela, no próprio celular.",
   },
   {
-    question: "Onde fica o historico?",
-    answer: "No app, na area de historico. Voce consulta quando quiser.",
+    question: "Onde fica o histórico?",
+    answer: "No app, na área de histórico. Você consulta quando quiser.",
   },
   {
     question: "Como envio para o cliente?",
-    answer: "Voce compartilha por WhatsApp ou e-mail em poucos toques (quando estiver com internet).",
+    answer: "Você compartilha por WhatsApp ou e-mail em poucos toques (quando estiver com internet).",
   },
 ]
 
@@ -43,7 +43,7 @@ export function FAQ() {
             Perguntas frequentes
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Tire suas duvidas sobre o GuinCheck
+            Tire suas dúvidas sobre o GuinCheck
           </p>
         </div>
 

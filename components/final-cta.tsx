@@ -9,7 +9,7 @@ export function FinalCTA() {
     <section className="py-16 sm:py-20 lg:py-24 bg-primary">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-foreground text-balance">
-          Pronto para profissionalizar suas remocoes?
+          Pronto para profissionalizar suas remoções?
         </h2>
         <p className="mt-4 text-lg text-primary-foreground/80 max-w-2xl mx-auto">
           Fale com a gente no WhatsApp e comece a usar o GuinCheck hoje.

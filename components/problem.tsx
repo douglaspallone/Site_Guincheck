@@ -9,7 +9,7 @@ const benefits = [
   {
     icon: WifiOff,
     title: "Funciona offline",
-    text: "Use sem internet na remocao",
+    text: "Use sem internet na remoção",
   },
   {
     icon: FileText,

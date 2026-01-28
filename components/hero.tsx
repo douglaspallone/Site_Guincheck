@@ -15,17 +15,17 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="text-center lg:text-left">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary-foreground leading-tight text-balance">
-              Checklist de Remocao em Minutos.{" "}
+              Checklist de Remoção em Minutos.{" "}
               <span className="text-accent">Fotos Ilimitadas, Offline e PDF.</span>
             </h1>
             
             <p className="mt-6 text-lg sm:text-xl text-primary-foreground/90 max-w-xl mx-auto lg:mx-0 text-pretty">
-              Registre o estado do veiculo, anote ocorrencias, colha assinatura na tela e gere um PDF profissional para enviar na hora.
+              Registre o estado do veículo, anote ocorrências, colha assinatura na tela e gere um PDF profissional para enviar na hora.
             </p>
 
             <p className="mt-4 text-sm text-primary-foreground/60 max-w-xl mx-auto lg:mx-0 flex items-center justify-center lg:justify-start gap-2">
               <WifiOff className="h-4 w-4" />
-              Funciona sem internet durante a remocao. Para enviar e salvar na nuvem, precisa de conexao.
+              Funciona sem internet durante a remoção. Para enviar e salvar na nuvem, precisa de conexão.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -68,7 +68,7 @@ export function Hero() {
                   <div className="p-4 space-y-3">
                     <div className="flex items-center gap-3 p-3 bg-muted rounded-lg">
                       <CheckCircle className="h-5 w-5 text-green-600" />
-                      <span className="text-sm font-medium text-foreground">Dados do veiculo</span>
+                      <span className="text-sm font-medium text-foreground">Dados do veículo</span>
                     </div>
                     <div className="flex items-center gap-3 p-3 bg-muted rounded-lg">
                       <CheckCircle className="h-5 w-5 text-green-600" />
@@ -76,7 +76,7 @@ export function Hero() {
                     </div>
                     <div className="flex items-center gap-3 p-3 bg-accent/20 rounded-lg border-2 border-accent">
                       <Camera className="h-5 w-5 text-accent-foreground" />
-                      <span className="text-sm font-medium text-foreground">Ocorrencias</span>
+                      <span className="text-sm font-medium text-foreground">Ocorrências</span>
                     </div>
                     <div className="flex items-center gap-3 p-3 bg-muted rounded-lg opacity-60">
                       <PenTool className="h-5 w-5 text-muted-foreground" />

@@ -22,7 +22,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-sm text-primary-foreground/70 text-center md:text-left">
-              Checklist de Remocao de Veiculos.
+              Checklist de Remoção de Veículos.
             </p>
           </div>
 
@@ -64,7 +64,7 @@ export function Footer() {
                 href="[LINK_PRIVACIDADE]"
                 className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
               >
-                Politica de Privacidade
+                Política de Privacidade
               </Link>
             </div>
           </div>

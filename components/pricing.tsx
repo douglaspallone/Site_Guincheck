@@ -15,9 +15,9 @@ const plans = [
     features: [
       "Fotos ilimitadas",
       "Funciona offline",
-      "Geracao de PDF",
+      "Geração de PDF",
       "Assinatura na tela",
-      "Historico de remocoes",
+      "Histórico de remoções",
       "Suporte por WhatsApp",
     ],
     cta: "Falar no WhatsApp e Assinar",
@@ -46,9 +46,9 @@ const plans = [
     period: "",
     description: "Para frotas",
     features: [
-      "Multiplos usuarios",
+      "Múltiplos usuários",
       "Painel administrativo",
-      "Relatorios consolidados",
+      "Relatórios consolidados",
       "Suporte dedicado",
     ],
     cta: "Falar com atendimento",
@@ -67,7 +67,7 @@ export function Pricing() {
             Planos que cabem no seu bolso
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Escolha o plano ideal para voce
+            Escolha o plano ideal para você
           </p>
         </div>
 

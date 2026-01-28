@@ -8,13 +8,13 @@ const features = [
   },
   {
     icon: Camera,
-    title: "Fotos do Veiculo",
+    title: "Fotos do Veículo",
     description: "Quantas fotos precisar. Com registro.",
   },
   {
     icon: AlertTriangle,
-    title: "Ocorrencias",
-    description: "Anote avarias e observacoes.",
+    title: "Ocorrências",
+    description: "Anote avarias e observações.",
   },
   {
     icon: PenTool,
@@ -23,12 +23,12 @@ const features = [
   },
   {
     icon: FileText,
-    title: "PDF Automatico",
+    title: "PDF Automático",
     description: "Gera o documento na hora.",
   },
   {
     icon: History,
-    title: "Historico Completo",
+    title: "Histórico Completo",
     description: "Tudo salvo e organizado.",
   },
 ]
@@ -39,7 +39,7 @@ export function Features() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground">
-            Tudo em um so app
+            Tudo em um só app
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Funcionalidades pensadas para o dia a dia do guincheiro
@@ -69,7 +69,7 @@ export function Features() {
       <div className="mt-16 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="text-center p-8 bg-muted rounded-2xl">
           <h3 className="text-xl sm:text-2xl font-bold text-foreground">
-            Chega de papel e discussao por avaria.
+            Chega de papel e discussão por avaria.
           </h3>
           <div className="mt-8 grid sm:grid-cols-3 gap-6">
             <div className="flex flex-col items-center gap-2">

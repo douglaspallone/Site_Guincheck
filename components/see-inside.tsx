@@ -7,7 +7,7 @@ const LINK_WHATSAPP = "https://wa.me/5511971890566?text=Ol%C3%A1!%20Quero%20conh
 const screenshots = [
   {
     icon: Smartphone,
-    label: "1. Dados do veiculo",
+    label: "1. Dados do veículo",
   },
   {
     icon: Camera,
@@ -15,7 +15,7 @@ const screenshots = [
   },
   {
     icon: AlertTriangle,
-    label: "3. Ocorrencias",
+    label: "3. Ocorrências",
   },
   {
     icon: PenTool,
@@ -27,7 +27,7 @@ const screenshots = [
   },
   {
     icon: History,
-    label: "6. Historico",
+    label: "6. Histórico",
   },
 ]
 
@@ -37,10 +37,10 @@ export function SeeInside() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground">
-            Veja como e por dentro
+            Veja como é por dentro
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Em 30 segundos voce entende.
+            Em 30 segundos você entende.
           </p>
         </div>
 
@@ -52,7 +52,7 @@ export function SeeInside() {
                 <Play className="h-10 w-10 text-accent-foreground ml-1" />
               </div>
               <p className="text-primary-foreground font-semibold text-lg">
-                Video rapido: do checklist ao PDF
+                Vídeo rápido: do checklist ao PDF
               </p>
             </div>
           </div>

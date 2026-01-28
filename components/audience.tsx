@@ -11,7 +11,7 @@ export function Audience() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground">
-            Para quem e o GuinCheck?
+            Para quem é o GuinCheck?
           </h2>
         </div>
 
@@ -33,15 +33,15 @@ export function Audience() {
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground">Comprovacao para o cliente</span>
+                <span className="text-muted-foreground">Comprovação para o cliente</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground">Menos dor de cabeca com avarias</span>
+                <span className="text-muted-foreground">Menos dor de cabeça com avarias</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground">Historico das remocoes</span>
+                <span className="text-muted-foreground">Histórico das remoções</span>
               </li>
             </ul>
 
@@ -72,15 +72,15 @@ export function Audience() {
             <ul className="mt-6 space-y-3">
               <li className="flex items-start gap-3">
                 <CheckCircle className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground">Padronizacao de processos</span>
+                <span className="text-muted-foreground">Padronização de processos</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground">Relatorios organizados</span>
+                <span className="text-muted-foreground">Relatórios organizados</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground">Multiplos usuarios</span>
+                <span className="text-muted-foreground">Múltiplos usuários</span>
               </li>
             </ul>
 

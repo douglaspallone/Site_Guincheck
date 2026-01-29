@@ -9,7 +9,7 @@ const LINK_WHATSAPP_EMPRESA = "https://wa.me/5511971890566?text=Ol%C3%A1!%20Quer
 const plans = [
   {
     name: "Mensal",
-    price: "49,90"
+    price: "49,90",
     period: "/mês",
     description: "Para comecar",
     features: [
@@ -27,7 +27,7 @@ const plans = [
   },
   {
     name: "Anual",
-    price: "499,99
+    price: "499,99",
     period: "/ano",
     description: "Recomendado",
     features: [
@@ -50,7 +50,7 @@ const plans = [
       "Relatórios consolidados",
       "Suporte dedicado",
     ],
-    cta: "Entrar na Lista de Espera"
+    cta: "Entrar na Lista de Espera",
     link: LINK_WHATSAPP_EMPRESA,
     highlighted: false,
     comingSoon: true,

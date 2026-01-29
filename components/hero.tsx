@@ -45,54 +45,32 @@ export function Hero() {
             </div>
           </div>
 
+{/* Lado Direito - MOLDURA DE CELULAR COM GIF */}
           <div className="relative flex justify-center lg:justify-end">
             <div className="relative">
-              <div className="relative w-64 sm:w-72 h-[500px] sm:h-[560px] bg-foreground/10 rounded-[2.5rem] border-4 border-foreground/20 shadow-2xl overflow-hidden">
-                <div className="absolute top-4 left-1/2 -translate-x-1/2 w-20 h-5 bg-foreground/30 rounded-full" />
+              {/* Moldura Externa do Celular */}
+              <div className="relative w-[280px] h-[580px] bg-zinc-900 rounded-[3rem] border-[8px] border-zinc-800 shadow-2xl overflow-hidden ring-4 ring-zinc-700/20">
+                {/* Speaker/Camera area (Notch) */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-zinc-800 rounded-b-2xl z-20" />
                 
-                <div className="absolute inset-4 top-12 bg-background rounded-2xl overflow-hidden">
-                  <div className="bg-primary p-4">
-                    <p className="text-primary-foreground text-sm font-semibold">Nova Remocao</p>
-                  </div>
-                  
-                  <div className="p-4 space-y-3">
-                    <div className="flex items-center gap-3 p-3 bg-muted rounded-lg">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
-                      <span className="text-sm font-medium text-foreground">Dados do veículo</span>
-                    </div>
-                    <div className="flex items-center gap-3 p-3 bg-muted rounded-lg">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
-                      <span className="text-sm font-medium text-foreground">Fotos registradas</span>
-                    </div>
-                    <div className="flex items-center gap-3 p-3 bg-accent/20 rounded-lg border-2 border-accent">
-                      <Camera className="h-5 w-5 text-accent-foreground" />
-                      <span className="text-sm font-medium text-foreground">Ocorrências</span>
-                    </div>
-                    <div className="flex items-center gap-3 p-3 bg-muted rounded-lg opacity-60">
-                      <PenTool className="h-5 w-5 text-muted-foreground" />
-                      <span className="text-sm font-medium text-muted-foreground">Assinatura na tela</span>
-                    </div>
-                    <div className="flex items-center gap-3 p-3 bg-muted rounded-lg opacity-60">
-                      <FileText className="h-5 w-5 text-muted-foreground" />
-                      <span className="text-sm font-medium text-muted-foreground">Gerar PDF</span>
-                    </div>
-                  </div>
-                  
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="bg-primary text-primary-foreground text-center py-3 rounded-lg font-semibold text-sm">
-                      Continuar
-                    </div>
-                  </div>
+                {/* Tela (Onde o GIF aparece) */}
+                <div className="absolute inset-0 bg-background overflow-hidden">
+                  <img 
+                    src="/images/demo.gif" // COLOQUE O CAMINHO DO SEU GIF AQUI (EX: /images/app-demo.gif)
+                    alt="Demonstração do Aplicativo" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-accent rounded-2xl flex items-center justify-center shadow-lg">
+              {/* Ícone flutuante de PDF */}
+              <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-accent rounded-2xl flex items-center justify-center shadow-lg animate-bounce-slow">
                 <FileText className="h-10 w-10 text-accent-foreground" />
               </div>
             </div>
           </div>
         </div>
-      </div>
+        </div>
     </section>
   )
 }

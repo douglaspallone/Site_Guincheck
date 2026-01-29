@@ -29,7 +29,7 @@ const features = [
   {
     icon: History,
     title: "Histórico Completo",
-    description: "Tudo salvo e organizado.",
+    description: "Tudo salvo e organizado, com sua marca.",
   },
 ]
 
@@ -74,7 +74,7 @@ export function Features() {
           <div className="mt-8 grid sm:grid-cols-3 gap-6">
             <div className="flex flex-col items-center gap-2">
               <Camera className="h-8 w-8 text-accent" />
-              <p className="font-semibold text-foreground">Fotos com data e hora</p>
+              <p className="font-semibold text-foreground">Fotos ilimitadas</p>
             </div>
             <div className="flex flex-col items-center gap-2">
               <PenTool className="h-8 w-8 text-accent" />
@@ -82,7 +82,7 @@ export function Features() {
             </div>
             <div className="flex flex-col items-center gap-2">
               <FileText className="h-8 w-8 text-accent" />
-              <p className="font-semibold text-foreground">PDF pronto para enviar</p>
+              <p className="font-semibold text-foreground">PDF com sua Marca</p>
             </div>
           </div>
         </div>

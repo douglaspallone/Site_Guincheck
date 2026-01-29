@@ -20,7 +20,7 @@ export function Hero() {
             </h1>
             
             <p className="mt-6 text-lg sm:text-xl text-primary-foreground/90 max-w-xl mx-auto lg:mx-0 text-pretty">
-              Registre o estado do veículo, anote ocorrências, colha assinatura na tela e gere um PDF profissional para enviar na hora.
+              Registre o estado do veículo, anote ocorrências, colha assinatura na tela e gere um PDF profissional com sua marca para enviar na hora.
             </p>
 
             <p className="mt-4 text-sm text-primary-foreground/60 max-w-xl mx-auto lg:mx-0 flex items-center justify-center lg:justify-start gap-2">
@@ -42,16 +42,6 @@ export function Hero() {
                   Ver por dentro
                 </Link>
               </Button>
-            </div>
-
-            <div className="mt-6 flex flex-wrap gap-4 justify-center lg:justify-start text-sm text-primary-foreground/70">
-              <Link href={LINK_PLAY_STORE} target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors underline underline-offset-2">
-                Google Play
-              </Link>
-              <span className="text-primary-foreground/40">|</span>
-              <Link href={LINK_APP_STORE} target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors underline underline-offset-2">
-                App Store
-              </Link>
             </div>
           </div>
 

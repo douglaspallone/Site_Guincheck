@@ -10,7 +10,7 @@ const LINK_WHATSAPP = "https://wa.me/5511971890566?text=Ol%C3%A1!%20Quero%20conh
 
 const navItems = [
   { label: "Diferenciais", href: "#diferenciais" },
-  { label: "Ver Por Dentro", href: "#ver-por-dentro" },
+  { label: "Ver por Dentro", href: "#ver-por-dentro" },
   { label: "Como Funciona", href: "#como-funciona" },
   { label: "Para Quem", href: "#para-quem" },
   { label: "Planos", href: "#planos" },

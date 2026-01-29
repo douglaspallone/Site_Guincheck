@@ -27,12 +27,12 @@ const plans = [
   },
   {
     name: "Anual",
-    price: "499,99",
+    price: "499,90",
     period: "/ano",
     description: "Recomendado",
     features: [
       "Tudo do plano Mensal",
-      "Economize ate 20%",
+      "Economize até 20%",
       "Prioridade no suporte",
     ],
     cta: "Falar no WhatsApp e Assinar",
@@ -42,7 +42,6 @@ const plans = [
   },
   {
     name: "Equipe/Empresa",
-    period: "",
     description: "Para frotas",
     features: [
       "Múltiplos usuários",

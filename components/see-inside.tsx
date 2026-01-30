@@ -44,17 +44,16 @@ export function SeeInside() {
           </p>
         </div>
 
+{/* MOLDURA COM VÍDEO DO CANVA */}
         <div className="mt-12 max-w-3xl mx-auto">
-          <div className="relative aspect-video bg-primary rounded-2xl overflow-hidden flex items-center justify-center">
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:2rem_2rem]" />
-            <div className="relative flex flex-col items-center gap-4">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-accent cursor-pointer hover:scale-110 transition-transform">
-                <Play className="h-10 w-10 text-accent-foreground ml-1" />
-              </div>
-              <p className="text-primary-foreground font-semibold text-lg">
-                Vídeo rápido: do checklist ao PDF
-              </p>
-            </div>
+          <div className="relative aspect-video bg-black rounded-2xl overflow-hidden shadow-xl border border-border">
+            <iframe
+              loading="lazy"
+              className="absolute inset-0 w-full h-full border-0"
+              src="https://www.canva.com/design/DAG_0PDFhCg/HE2luqFMyWu3h1Xa2n9q0A/watch?embed"
+              allowFullScreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            ></iframe>
           </div>
         </div>
 

@@ -1,10 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { MessageCircle, Eye, CheckCircle, Camera, PenTool, FileText, WifiOff } from "lucide-react"
-
-const LINK_WHATSAPP = "https://wa.me/5511971890566?text=Ol%C3%A1!%20Quero%20conhecer%20o%20GuinCheck%20e%20come%C3%A7ar%20a%20usar%20no%20meu%20guincho."
-const LINK_PLAY_STORE = "[LINK_PLAY_STORE]"
-const LINK_APP_STORE = "[LINK_APP_STORE]"
+import { Download, Eye, FileText, Smartphone } from "lucide-react"
+import { APP_URL } from "@/lib/links"
 
 export function Hero() {
   return (
@@ -24,15 +21,15 @@ export function Hero() {
             </p>
 
             <p className="mt-4 text-sm text-primary-foreground/60 max-w-xl mx-auto lg:mx-0 flex items-center justify-center lg:justify-start gap-2">
-              <WifiOff className="h-4 w-4" />
-              Funciona sem internet durante a remoção. Para enviar e salvar na nuvem, precisa de conexão.
+              <Smartphone className="h-4 w-4" />
+              Acesse pelo navegador, instale no celular e use offline na remoção. Para enviar e sincronizar, conecte depois.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button asChild size="lg" className="bg-[#25D366] text-white hover:bg-[#20BD5A] font-semibold text-base h-14 px-8">
-                <Link href={LINK_WHATSAPP} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  Falar no WhatsApp
+              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-base h-14 px-8">
+                <Link href={APP_URL} target="_blank" rel="noopener noreferrer">
+                  <Download className="mr-2 h-5 w-5" />
+                  Acessar app
                 </Link>
               </Button>
               

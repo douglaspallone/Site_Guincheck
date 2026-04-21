@@ -1,60 +1,73 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { CheckCircle, Star, MessageCircle, Clock } from "lucide-react"
+import { CheckCircle, CreditCard, Download, QrCode, Star } from "lucide-react"
+import { APP_URL } from "@/lib/links"
 
-const LINK_WHATSAPP_MENSAL = "https://wa.me/5511971890566?text=Ol%C3%A1!%20Quero%20assinar%20o%20plano%20Mensal%20do%20GuinCheck."
-const LINK_WHATSAPP_ANUAL = "https://wa.me/5511971890566?text=Ol%C3%A1!%20Quero%20assinar%20o%20plano%20Anual%20do%20GuinCheck."
-const LINK_WHATSAPP_EMPRESA = "https://wa.me/5511971890566?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20plano%20para%20Empresas%20do%20GuinCheck."
+const includedFeatures = [
+  "Fotos ilimitadas",
+  "Funciona offline",
+  "Geração de PDF",
+  "Assinatura na tela",
+  "Histórico de remoções",
+  "Suporte por WhatsApp",
+]
 
 const plans = [
   {
+    category: "Avulso",
     name: "Mensal",
-    price: "49,90",
+    originalPrice: "49,90",
+    price: "29,90",
     period: "/mês",
-    description: "Para comecar",
-    features: [
-      "Fotos ilimitadas",
-      "Funciona offline",
-      "Geração de PDF",
-      "Assinatura na tela",
-      "Histórico de remoções",
-      "Suporte por WhatsApp",
-    ],
-    cta: "Falar no WhatsApp e Assinar",
-    link: LINK_WHATSAPP_MENSAL,
-    highlighted: false,
-    comingSoon: false,
+    billing: "Pagamento único",
+    paymentMethods: ["Cartão", "PIX"],
+    cta: "Comprar pelo app",
+    link: APP_URL,
+    featured: false,
   },
   {
+    category: "Avulso",
     name: "Anual",
-    price: "499,90",
+    originalPrice: "499,90",
+    price: "299,90",
     period: "/ano",
-    description: "Recomendado",
-    features: [
-      "Tudo do plano Mensal",
-      "Economize até 20%",
-      "Prioridade no suporte",
-    ],
-    cta: "Falar no WhatsApp e Assinar",
-    link: LINK_WHATSAPP_ANUAL,
-    highlighted: true,
-    comingSoon: false,
+    billing: "Pagamento único",
+    paymentMethods: ["Cartão", "PIX"],
+    cta: "Comprar pelo app",
+    link: APP_URL,
+    badge: "Melhor oferta",
+    featured: false,
   },
   {
-    name: "Equipe/Empresa",
-    description: "Para frotas",
-    features: [
-      "Múltiplos usuários",
-      "Painel administrativo",
-      "Relatórios consolidados",
-      "Suporte dedicado",
-    ],
-    cta: "Entrar na Lista de Espera",
-    link: LINK_WHATSAPP_EMPRESA,
-    highlighted: false,
-    comingSoon: true,
+    category: "Assinatura",
+    name: "Mensal",
+    originalPrice: "39,90",
+    price: "19,90",
+    period: "/mês",
+    billing: "Recorrente",
+    paymentMethods: ["Cartão"],
+    cta: "Assinar pelo app",
+    link: APP_URL,
+    featured: true,
   },
 ]
+
+function PaymentMethod({ method, featured }: { method: string; featured: boolean }) {
+  const Icon = method === "PIX" ? QrCode : CreditCard
+
+  return (
+    <span
+      className={`inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium ${
+        featured
+          ? "bg-primary-foreground/10 text-primary-foreground"
+          : "bg-muted text-foreground"
+      }`}
+    >
+      <Icon className="h-4 w-4 text-accent" />
+      {method}
+    </span>
+  )
+}
 
 export function Pricing() {
   return (
@@ -62,80 +75,98 @@ export function Pricing() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground">
-            Planos que cabem no seu bolso
+            Planos promocionais
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Escolha o plano ideal para você
+            Mesmas vantagens. Você escolhe a forma de pagamento.
           </p>
         </div>
 
-        <div className="mt-12 grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="mt-8 max-w-5xl mx-auto border-y border-border py-5">
+          <p className="text-sm font-semibold text-foreground text-center">
+            Incluso em qualquer plano
+          </p>
+          <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {includedFeatures.map((feature) => (
+              <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
+                <CheckCircle className="h-4 w-4 flex-shrink-0 text-accent" />
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mt-10 grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative p-6 rounded-xl border transition-all duration-300 ${
-                plan.highlighted
-                  ? "bg-primary text-primary-foreground border-primary scale-105 shadow-xl"
-                  : plan.comingSoon
-                    ? "bg-card text-card-foreground border-border opacity-80"
-                    : "bg-card text-card-foreground border-border hover:border-accent hover:shadow-lg"
+              className={`relative flex flex-col p-6 rounded-xl border transition-all duration-300 ${
+                plan.featured
+                  ? "bg-primary text-primary-foreground border-primary md:scale-105 shadow-xl"
+                  : "bg-card text-card-foreground border-border hover:border-accent hover:shadow-lg"
               }`}
             >
-              {plan.highlighted && (
+              {plan.badge && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-semibold">
                   <Star className="h-3 w-3" />
-                  Recomendado
+                  {plan.badge}
                 </div>
               )}
 
-              {plan.comingSoon && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-muted text-muted-foreground px-3 py-1 rounded-full text-xs font-semibold">
-                  <Clock className="h-3 w-3" />
-                  Em breve
-                </div>
-              )}
-
-              <div className="text-center">
-                <h3 className="text-lg font-semibold">{plan.name}</h3>
-                <p className={`text-sm mt-1 ${plan.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
-                  {plan.description}
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                  {plan.category}
                 </p>
-                <div className="mt-4">
-                  <span className="text-sm">a partir de </span>
-                  <span className="text-3xl font-bold">R$ {plan.price}</span>
-                  <span className={`text-sm ${plan.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
-                    {plan.period}
-                  </span>
+                <h3 className="mt-1 text-xl font-semibold">{plan.name}</h3>
+                <p className={`mt-1 text-sm ${plan.featured ? "text-primary-foreground/75" : "text-muted-foreground"}`}>
+                  {plan.billing}
+                </p>
+
+                <div className="mt-6 min-h-[84px]">
+                  <p className={`text-sm ${plan.featured ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
+                    de <span className="line-through">R$ {plan.originalPrice}</span>
+                  </p>
+                  <div className="mt-1">
+                    <span className="text-sm">por </span>
+                    <span className="text-4xl font-bold">R$ {plan.price}</span>
+                    <span className={`text-sm ${plan.featured ? "text-primary-foreground/75" : "text-muted-foreground"}`}>
+                      {plan.period}
+                    </span>
+                  </div>
                 </div>
               </div>
 
-              <ul className="mt-6 space-y-3">
-                {plan.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-start gap-2">
-                    <CheckCircle className={`h-5 w-5 flex-shrink-0 ${plan.highlighted ? "text-accent" : "text-accent"}`} />
-                    <span className="text-sm">{feature}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className={`mt-6 flex-1 border-t pt-5 ${plan.featured ? "border-primary-foreground/20" : "border-border"}`}>
+                <p className={`text-xs font-semibold uppercase tracking-wide ${plan.featured ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
+                  Pagamento
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {plan.paymentMethods.map((method) => (
+                    <PaymentMethod key={method} method={method} featured={plan.featured} />
+                  ))}
+                </div>
+              </div>
 
               <Button
                 asChild
                 className={`w-full mt-6 font-semibold h-12 ${
-                  plan.highlighted
-                    ? "bg-[#25D366] text-white hover:bg-[#20BD5A]"
-                    : plan.comingSoon
-                      ? "bg-muted text-muted-foreground hover:bg-muted/80"
-                      : "bg-[#25D366] text-white hover:bg-[#20BD5A]"
+                  plan.featured
+                    ? "bg-accent text-accent-foreground hover:bg-accent/90"
+                    : "bg-primary text-primary-foreground hover:bg-primary/90"
                 }`}
               >
                 <Link href={plan.link} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-2 h-4 w-4" />
+                  <Download className="mr-2 h-4 w-4" />
                   {plan.cta}
                 </Link>
               </Button>
             </div>
           ))}
         </div>
+
+        <p className="mt-6 text-center text-sm text-muted-foreground">
+          Valores promocionais por tempo limitado.
+        </p>
       </div>
     </section>
   )

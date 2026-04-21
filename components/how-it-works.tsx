@@ -1,8 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ClipboardList, Camera, FileCheck, MessageCircle, Eye } from "lucide-react"
-
-const LINK_WHATSAPP = "https://wa.me/5511971890566?text=Ol%C3%A1!%20Quero%20conhecer%20o%20GuinCheck%20e%20come%C3%A7ar%20a%20usar%20no%20meu%20guincho."
+import { ClipboardList, Camera, FileCheck, Download, Eye } from "lucide-react"
+import { APP_URL } from "@/lib/links"
 
 const steps = [
   {
@@ -67,10 +66,10 @@ export function HowItWorks() {
         </div>
 
         <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-          <Button asChild size="lg" className="bg-[#25D366] text-white hover:bg-[#20BD5A] font-semibold h-14 px-8">
-            <Link href={LINK_WHATSAPP} target="_blank" rel="noopener noreferrer">
-              <MessageCircle className="mr-2 h-5 w-5" />
-              Falar no WhatsApp
+          <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold h-14 px-8">
+            <Link href={APP_URL} target="_blank" rel="noopener noreferrer">
+              <Download className="mr-2 h-5 w-5" />
+              Acessar app
             </Link>
           </Button>
           <Button asChild size="lg" variant="outline" className="font-semibold h-14 px-8 bg-transparent">

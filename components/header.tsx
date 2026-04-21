@@ -3,10 +3,9 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, X, MessageCircle } from "lucide-react"
+import { Download, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-
-const LINK_WHATSAPP = "https://wa.me/5511971890566?text=Ol%C3%A1!%20Quero%20conhecer%20o%20GuinCheck%20e%20come%C3%A7ar%20a%20usar%20no%20meu%20guincho."
+import { APP_URL } from "@/lib/links"
 
 const navItems = [
   { label: "Diferenciais", href: "#diferenciais" },
@@ -48,10 +47,10 @@ export function Header() {
           </nav>
 
           <div className="hidden md:flex items-center gap-3">
-            <Button asChild size="lg" className="bg-[#25D366] text-white hover:bg-[#20BD5A] font-semibold h-11 px-5">
-              <Link href={LINK_WHATSAPP} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="mr-2 h-5 w-5" />
-                Falar no WhatsApp
+            <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold h-11 px-5">
+              <Link href={APP_URL} target="_blank" rel="noopener noreferrer">
+                <Download className="mr-2 h-5 w-5" />
+                Acessar app
               </Link>
             </Button>
           </div>
@@ -83,10 +82,10 @@ export function Header() {
                   {item.label}
                 </Link>
               ))}
-              <Button asChild size="lg" className="mt-2 bg-[#25D366] text-white hover:bg-[#20BD5A] font-semibold">
-                <Link href={LINK_WHATSAPP} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  Falar no WhatsApp
+              <Button asChild size="lg" className="mt-2 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold">
+                <Link href={APP_URL} target="_blank" rel="noopener noreferrer">
+                  <Download className="mr-2 h-5 w-5" />
+                  Acessar app
                 </Link>
               </Button>
             </nav>

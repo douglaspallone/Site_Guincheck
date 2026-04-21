@@ -1,17 +1,14 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { CheckCircle, Star, MessageCircle, Clock } from "lucide-react"
-
-const LINK_WHATSAPP_MENSAL = "https://wa.me/5511971890566?text=Ol%C3%A1!%20Quero%20assinar%20o%20plano%20Mensal%20do%20GuinCheck."
-const LINK_WHATSAPP_ANUAL = "https://wa.me/5511971890566?text=Ol%C3%A1!%20Quero%20assinar%20o%20plano%20Anual%20do%20GuinCheck."
-const LINK_WHATSAPP_EMPRESA = "https://wa.me/5511971890566?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20plano%20para%20Empresas%20do%20GuinCheck."
+import { CheckCircle, Star, MessageCircle, Clock, Download } from "lucide-react"
+import { APP_URL, FLEETS_WAITLIST_WHATSAPP_URL } from "@/lib/links"
 
 const plans = [
   {
     name: "Mensal",
     price: "49,90",
     period: "/mês",
-    description: "Para comecar",
+    description: "Para começar",
     features: [
       "Fotos ilimitadas",
       "Funciona offline",
@@ -20,8 +17,8 @@ const plans = [
       "Histórico de remoções",
       "Suporte por WhatsApp",
     ],
-    cta: "Falar no WhatsApp e Assinar",
-    link: LINK_WHATSAPP_MENSAL,
+    cta: "Assinar pelo app",
+    link: APP_URL,
     highlighted: false,
     comingSoon: false,
   },
@@ -35,8 +32,8 @@ const plans = [
       "Economize até 20%",
       "Prioridade no suporte",
     ],
-    cta: "Falar no WhatsApp e Assinar",
-    link: LINK_WHATSAPP_ANUAL,
+    cta: "Assinar pelo app",
+    link: APP_URL,
     highlighted: true,
     comingSoon: false,
   },
@@ -49,8 +46,8 @@ const plans = [
       "Relatórios consolidados",
       "Suporte dedicado",
     ],
-    cta: "Entrar na Lista de Espera",
-    link: LINK_WHATSAPP_EMPRESA,
+    cta: "Entrar na lista de espera",
+    link: FLEETS_WAITLIST_WHATSAPP_URL,
     highlighted: false,
     comingSoon: true,
   },
@@ -100,12 +97,20 @@ export function Pricing() {
                 <p className={`text-sm mt-1 ${plan.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
                   {plan.description}
                 </p>
-                <div className="mt-4">
-                  <span className="text-sm">a partir de </span>
-                  <span className="text-3xl font-bold">R$ {plan.price}</span>
-                  <span className={`text-sm ${plan.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
-                    {plan.period}
-                  </span>
+                <div className="mt-4 min-h-[44px] flex items-center justify-center">
+                  {plan.price && plan.period ? (
+                    <div>
+                      <span className="text-sm">a partir de </span>
+                      <span className="text-3xl font-bold">R$ {plan.price}</span>
+                      <span className={`text-sm ${plan.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
+                        {plan.period}
+                      </span>
+                    </div>
+                  ) : (
+                    <span className="text-base font-semibold text-muted-foreground">
+                      Disponível em breve
+                    </span>
+                  )}
                 </div>
               </div>
 
@@ -122,14 +127,18 @@ export function Pricing() {
                 asChild
                 className={`w-full mt-6 font-semibold h-12 ${
                   plan.highlighted
-                    ? "bg-[#25D366] text-white hover:bg-[#20BD5A]"
+                    ? "bg-accent text-accent-foreground hover:bg-accent/90"
                     : plan.comingSoon
                       ? "bg-muted text-muted-foreground hover:bg-muted/80"
-                      : "bg-[#25D366] text-white hover:bg-[#20BD5A]"
+                      : "bg-primary text-primary-foreground hover:bg-primary/90"
                 }`}
               >
                 <Link href={plan.link} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-2 h-4 w-4" />
+                  {plan.comingSoon ? (
+                    <MessageCircle className="mr-2 h-4 w-4" />
+                  ) : (
+                    <Download className="mr-2 h-4 w-4" />
+                  )}
                   {plan.cta}
                 </Link>
               </Button>

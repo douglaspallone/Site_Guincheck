@@ -1,9 +1,7 @@
 import Link from "next/link"
-import { User, Building2, CheckCircle, MessageCircle, Clock } from "lucide-react"
+import { User, Building2, CheckCircle, MessageCircle, Clock, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
-
-const LINK_WHATSAPP = "https://wa.me/5511971890566?text=Ol%C3%A1!%20Quero%20conhecer%20o%20GuinCheck%20e%20come%C3%A7ar%20a%20usar%20no%20meu%20guincho."
-const LINK_WHATSAPP_FROTAS = "https://wa.me/5511971890566?text=Quero%20saber%20quando%20sai%20o%20plano%20para%20frotas."
+import { APP_URL, FLEETS_WAITLIST_WHATSAPP_URL } from "@/lib/links"
 
 export function Audience() {
   return (
@@ -45,10 +43,10 @@ export function Audience() {
               </li>
             </ul>
 
-            <Button asChild size="lg" className="w-full mt-6 bg-[#25D366] text-white hover:bg-[#20BD5A] font-semibold h-12">
-              <Link href={LINK_WHATSAPP} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="mr-2 h-5 w-5" />
-                Falar no WhatsApp
+            <Button asChild size="lg" className="w-full mt-6 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold h-12">
+              <Link href={APP_URL} target="_blank" rel="noopener noreferrer">
+                <Download className="mr-2 h-5 w-5" />
+                Acessar app
               </Link>
             </Button>
           </div>
@@ -85,7 +83,7 @@ export function Audience() {
             </ul>
 
             <Button asChild size="lg" variant="outline" className="w-full mt-6 font-semibold h-12 bg-transparent">
-              <Link href={LINK_WHATSAPP_FROTAS} target="_blank" rel="noopener noreferrer">
+              <Link href={FLEETS_WAITLIST_WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="mr-2 h-5 w-5" />
                 Entrar na lista de espera
               </Link>

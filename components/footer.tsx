@@ -1,10 +1,11 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Mail, MessageCircle, Phone } from "lucide-react"
+import { SUPPORT_PHONE_DISPLAY, SUPPORT_WHATSAPP_URL } from "@/lib/links"
 
 const EMAIL_CONTATO = "[EMAIL_CONTATO]"
-const LINK_WHATSAPP = "https://wa.me/5511971890566?text=Ol%C3%A1!%20Quero%20conhecer%20o%20GuinCheck%20e%20come%C3%A7ar%20a%20usar%20no%20meu%20guincho."
-const TELEFONE = "+55 11 97189-0566"
+const LINK_TERMOS = ""
+const LINK_PRIVACIDADE = ""
 
 export function Footer() {
   return (
@@ -28,18 +29,18 @@ export function Footer() {
 
           <div className="flex flex-col items-center md:items-end gap-3">
             <Link
-              href={LINK_WHATSAPP}
+              href={SUPPORT_WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm font-semibold text-primary-foreground hover:text-accent transition-colors"
             >
               <MessageCircle className="h-5 w-5" />
-              Falar no WhatsApp
+              Suporte pelo WhatsApp
             </Link>
             
             <div className="flex items-center gap-2 text-sm text-primary-foreground/70">
               <Phone className="h-4 w-4" />
-              {TELEFONE}
+              {SUPPORT_PHONE_DISPLAY}
             </div>
 
             {EMAIL_CONTATO !== "[EMAIL_CONTATO]" && (
@@ -52,21 +53,23 @@ export function Footer() {
               </Link>
             )}
             
-            <div className="flex items-center gap-4 text-sm mt-2">
-              <Link
-                href="[LINK_TERMOS]"
-                className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
-              >
-                Termos de Uso
-              </Link>
-              <span className="text-primary-foreground/40">|</span>
-              <Link
-                href="[LINK_PRIVACIDADE]"
-                className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
-              >
-                Política de Privacidade
-              </Link>
-            </div>
+            {LINK_TERMOS && LINK_PRIVACIDADE && (
+              <div className="flex items-center gap-4 text-sm mt-2">
+                <Link
+                  href={LINK_TERMOS}
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                >
+                  Termos de Uso
+                </Link>
+                <span className="text-primary-foreground/40">|</span>
+                <Link
+                  href={LINK_PRIVACIDADE}
+                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                >
+                  Política de Privacidade
+                </Link>
+              </div>
+            )}
           </div>
         </div>
 

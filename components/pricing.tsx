@@ -1,6 +1,5 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-<<<<<<< HEAD
 import { CheckCircle, CreditCard, Download, QrCode, Star } from "lucide-react"
 import { APP_URL } from "@/lib/links"
 
@@ -12,10 +11,6 @@ const includedFeatures = [
   "Histórico de remoções",
   "Suporte por WhatsApp",
 ]
-=======
-import { CheckCircle, Star, MessageCircle, Clock, Download } from "lucide-react"
-import { APP_URL, FLEETS_WAITLIST_WHATSAPP_URL } from "@/lib/links"
->>>>>>> 9be31271c2edf34806351855d12d06a0210b2694
 
 const plans = [
   {
@@ -24,27 +19,11 @@ const plans = [
     originalPrice: "49,90",
     price: "29,90",
     period: "/mês",
-<<<<<<< HEAD
     billing: "Pagamento único",
     paymentMethods: ["Cartão", "PIX"],
     cta: "Comprar pelo app",
     link: APP_URL,
     featured: false,
-=======
-    description: "Para começar",
-    features: [
-      "Fotos ilimitadas",
-      "Funciona offline",
-      "Geração de PDF",
-      "Assinatura na tela",
-      "Histórico de remoções",
-      "Suporte por WhatsApp",
-    ],
-    cta: "Assinar pelo app",
-    link: APP_URL,
-    highlighted: false,
-    comingSoon: false,
->>>>>>> 9be31271c2edf34806351855d12d06a0210b2694
   },
   {
     category: "Avulso",
@@ -52,12 +31,10 @@ const plans = [
     originalPrice: "499,90",
     price: "299,90",
     period: "/ano",
-<<<<<<< HEAD
     billing: "Pagamento único",
     paymentMethods: ["Cartão", "PIX"],
     cta: "Comprar pelo app",
     link: APP_URL,
-    badge: "Melhor oferta",
     featured: false,
   },
   {
@@ -70,33 +47,8 @@ const plans = [
     paymentMethods: ["Cartão"],
     cta: "Assinar pelo app",
     link: APP_URL,
+    badge: "Mais vantajoso",
     featured: true,
-=======
-    description: "Recomendado",
-    features: [
-      "Tudo do plano Mensal",
-      "Economize até 20%",
-      "Prioridade no suporte",
-    ],
-    cta: "Assinar pelo app",
-    link: APP_URL,
-    highlighted: true,
-    comingSoon: false,
-  },
-  {
-    name: "Equipe/Empresa",
-    description: "Para frotas",
-    features: [
-      "Múltiplos usuários",
-      "Painel administrativo",
-      "Relatórios consolidados",
-      "Suporte dedicado",
-    ],
-    cta: "Entrar na lista de espera",
-    link: FLEETS_WAITLIST_WHATSAPP_URL,
-    highlighted: false,
-    comingSoon: true,
->>>>>>> 9be31271c2edf34806351855d12d06a0210b2694
   },
 ]
 
@@ -165,7 +117,6 @@ export function Pricing() {
                 <p className="text-xs font-semibold uppercase tracking-wide text-accent">
                   {plan.category}
                 </p>
-<<<<<<< HEAD
                 <h3 className="mt-1 text-xl font-semibold">{plan.name}</h3>
                 <p className={`mt-1 text-sm ${plan.featured ? "text-primary-foreground/75" : "text-muted-foreground"}`}>
                   {plan.billing}
@@ -182,22 +133,6 @@ export function Pricing() {
                       {plan.period}
                     </span>
                   </div>
-=======
-                <div className="mt-4 min-h-[44px] flex items-center justify-center">
-                  {plan.price && plan.period ? (
-                    <div>
-                      <span className="text-sm">a partir de </span>
-                      <span className="text-3xl font-bold">R$ {plan.price}</span>
-                      <span className={`text-sm ${plan.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
-                        {plan.period}
-                      </span>
-                    </div>
-                  ) : (
-                    <span className="text-base font-semibold text-muted-foreground">
-                      Disponível em breve
-                    </span>
-                  )}
->>>>>>> 9be31271c2edf34806351855d12d06a0210b2694
                 </div>
               </div>
 
@@ -215,7 +150,6 @@ export function Pricing() {
               <Button
                 asChild
                 className={`w-full mt-6 font-semibold h-12 ${
-<<<<<<< HEAD
                   plan.featured
                     ? "bg-accent text-accent-foreground hover:bg-accent/90"
                     : "bg-primary text-primary-foreground hover:bg-primary/90"
@@ -223,21 +157,6 @@ export function Pricing() {
               >
                 <Link href={plan.link} target="_blank" rel="noopener noreferrer">
                   <Download className="mr-2 h-4 w-4" />
-=======
-                  plan.highlighted
-                    ? "bg-accent text-accent-foreground hover:bg-accent/90"
-                    : plan.comingSoon
-                      ? "bg-muted text-muted-foreground hover:bg-muted/80"
-                      : "bg-primary text-primary-foreground hover:bg-primary/90"
-                }`}
-              >
-                <Link href={plan.link} target="_blank" rel="noopener noreferrer">
-                  {plan.comingSoon ? (
-                    <MessageCircle className="mr-2 h-4 w-4" />
-                  ) : (
-                    <Download className="mr-2 h-4 w-4" />
-                  )}
->>>>>>> 9be31271c2edf34806351855d12d06a0210b2694
                   {plan.cta}
                 </Link>
               </Button>
